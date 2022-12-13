@@ -1,16 +1,21 @@
-export const App = () => {
+import UserProfile from './Profile/Profile';
+import user from './JsonData/user.json';
+
+import { Container } from './App.styled.jsx';
+
+
+const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+    <Container>
+      <UserProfile
+        username={user.username}
+        tag={user.tag}
+        location={user.location}
+        avatar={user.avatar}
+        stats={user.stats}
+      />
+    </Container>
   );
 };
+
+export default App;
