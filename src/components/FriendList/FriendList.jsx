@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
-import { }
+// import PropTypes from 'prop-types';
+// import { }
 
-export default FriendList;
+// export default FriendList;
