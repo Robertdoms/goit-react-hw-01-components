@@ -7,6 +7,19 @@ import {
   FriendOnlineStatus,
 } from 'components/FriendList/FriendList.styled';
 
+const FriendList = ({ friends }) => {
+  return (
+    <Container>
+      {friends.map(friend => (
+        <FriendCard key={friend.id}>
+          <FriendOnlineStatus isOnline={friend.isOnline}></FriendOnlineStatus>
+          <FriendAvatar src={friend.avatar} alt={friend.name} />
+          <FriendName>{friend.name}</FriendName>
+        </FriendCard>
+      ))}
+    </Container>
+  );
+};
 FriendList.propTypes = {
   friends: PropTypes.arrayOf(
     PropTypes.shape({
@@ -19,9 +32,3 @@ FriendList.propTypes = {
 };
 
 export default FriendList;
-
-<li class="item">
-  <span class="status"></span>
-  <img class="avatar" src="" alt="User avatar" width="48" />
-  <p class="name"></p>
-</li>;
