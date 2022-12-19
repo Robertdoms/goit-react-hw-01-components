@@ -21,6 +21,8 @@ const App = () => {
       />
       <StatsData title="Upload stats" stats={data} />
       <StatsData stats={data} />
+      <FriendList friends={friends} />
+      <TransactionHistory items={transactions} />
     </Container>
   );
 };
