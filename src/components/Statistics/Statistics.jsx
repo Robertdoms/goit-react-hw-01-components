@@ -15,13 +15,13 @@ const StatsData = ({ title, stats }) => {
       {title && <h2 className="title">{title}</h2>}
 
       <StatList>
-        {stats.map(stat => (
+        {stats.map(({ id, label, percentage }) => (
           <StatListItem
-            key={stat.id}
+            key={id}
             style={{ backgroundColor: getRandomHexColor() }}
           >
-            <StatLabel>{stat.label}</StatLabel>
-            <StatPercentage>{stat.percentage}</StatPercentage>
+            <StatLabel>{label}</StatLabel>
+            <StatPercentage>{percentage}</StatPercentage>
           </StatListItem>
         ))}
       </StatList>
