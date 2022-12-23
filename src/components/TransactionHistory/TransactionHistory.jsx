@@ -12,11 +12,11 @@ const TransactionHistory = ({ items }) => {
       </thead>
 
       <Tbody>
-        {items.map(item => (
-          <tr key={item.id}>
-            <Td>{item.type}</Td>
-            <Td>{item.amount}</Td>
-            <Td>{item.currency}</Td>
+        {items.map(({ id, type, amount, currency }) => (
+          <tr key={id}>
+            <Td>{type}</Td>
+            <Td>{amount}</Td>
+            <Td>{currency}</Td>
           </tr>
         ))}
       </Tbody>
