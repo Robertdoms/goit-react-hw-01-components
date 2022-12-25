@@ -6,25 +6,21 @@ import {
   FriendOnlineStatus,
 } from 'components/FriendList/FriendList.styled';
 
-const FriendListItem = ({ friends }) => {
-  return friends.map(({ id, isOnline, avatar, name }) => (
+const FriendListItem = ({ id, isOnline, avatar, name }) => {
+  return (
     <FriendCard key={id}>
       <FriendOnlineStatus isOnline={isOnline}></FriendOnlineStatus>
       <FriendAvatar src={avatar} alt={name} />
-      <FriendName>{name}</FriendName>cZx
+      <FriendName>{name}</FriendName>
     </FriendCard>
-  ));
+  );
 };
 
 FriendListItem.propTypes = {
-  friends: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      name: PropTypes.string.isRequired,
-      avatar: PropTypes.string.isRequired,
-      isOnline: PropTypes.bool.isRequired,
-    })
-  ),
+  id: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
+  avatar: PropTypes.string.isRequired,
+  isOnline: PropTypes.bool.isRequired,
 };
 
 export default FriendListItem;
