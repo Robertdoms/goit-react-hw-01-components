@@ -6,9 +6,9 @@ import {
   FriendOnlineStatus,
 } from 'components/FriendList/FriendList.styled';
 
-const FriendListItem = ({ id, isOnline, avatar, name }) => {
+const FriendListItem = ({ isOnline, avatar, name }) => {
   return (
-    <FriendCard key={id}>
+    <FriendCard>
       <FriendOnlineStatus isOnline={isOnline}></FriendOnlineStatus>
       <FriendAvatar src={avatar} alt={name} />
       <FriendName>{name}</FriendName>
@@ -17,7 +17,6 @@ const FriendListItem = ({ id, isOnline, avatar, name }) => {
 };
 
 FriendListItem.propTypes = {
-  id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
   avatar: PropTypes.string.isRequired,
   isOnline: PropTypes.bool.isRequired,
